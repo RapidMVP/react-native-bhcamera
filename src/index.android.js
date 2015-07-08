@@ -14,6 +14,14 @@ const BH_CAMERA_REF = 'bhcamera';
 
 class BHCamera extends React.Component {
 
+  //static requestAuth = (fn) => {
+  //  BHCameraManager.requestAuth((res) => {
+  //    let cb = fn ? fn : () => {};
+  //    let err = !res.success ? new Error(res.details) : null;
+  //    cb(err, res);
+  //  });
+  //}
+
   static propTypes = {
     scanning: React.PropTypes.bool,
     aspect: React.PropTypes.oneOf(['fill', 'fit', 'stretch']),
@@ -49,14 +57,8 @@ class BHCamera extends React.Component {
     return React.findNodeHandle(this.refs[BH_CAMERA_REF]);
   }
 
-  requestAuth = () => {
-    BHCameraManager.requestAuth(this._getBHCameraHandle());
-  }
-
-  requestAuth = () => {
-    let h = this._getBHCameraHandle();
-    BHCameraManager.requestAuth(h);
-    BHCameraManager.setup(h);
+  requestAuth = (fn) => {
+    BHCamera.requestAuth(fn);
   }
 
   stopScanner = () => {
@@ -102,4 +104,3 @@ Object.keys(NativeMethodsMixin).forEach((key) => {
 let NativeBHCamera = requireNativeComponent('BHCamera', BHCamera);
 
 export default BHCamera;
-
