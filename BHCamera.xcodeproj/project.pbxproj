@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14B963D81B0A67B80036437B /* BHCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14B963D71B0A67B80036437B /* BHCamera.h */; };
-		14B963DA1B0A67B80036437B /* BHCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B963D91B0A67B80036437B /* BHCamera.m */; };
 		14B963E01B0A67B80036437B /* libBHCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B963D41B0A67B80036437B /* libBHCamera.a */; };
+		14B963FB1B0A680C0036437B /* BHCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B963FA1B0A680C0036437B /* BHCameraManager.m */; };
+		14B963FE1B0A684C0036437B /* BHCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B963FD1B0A684C0036437B /* BHCamera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +29,20 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				14B963D81B0A67B80036437B /* BHCamera.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1448D1C01B4C74260011926D /* BHCamera.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BHCamera.podspec; sourceTree = SOURCE_ROOT; };
 		14B963D41B0A67B80036437B /* libBHCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHCamera.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		14B963D71B0A67B80036437B /* BHCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHCamera.h; sourceTree = "<group>"; };
-		14B963D91B0A67B80036437B /* BHCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHCamera.m; sourceTree = "<group>"; };
 		14B963DF1B0A67B80036437B /* BHCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BHCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B963E51B0A67B80036437B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B963F91B0A680C0036437B /* BHCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHCameraManager.h; sourceTree = "<group>"; };
+		14B963FA1B0A680C0036437B /* BHCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHCameraManager.m; sourceTree = "<group>"; };
+		14B963FC1B0A684B0036437B /* BHCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BHCamera-Bridging-Header.h"; path = "BHCamera/BHCamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		14B963FD1B0A684C0036437B /* BHCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHCamera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				14B963D61B0A67B80036437B /* BHCamera */,
+				14B963FC1B0A684B0036437B /* BHCamera-Bridging-Header.h */,
 				14B963E31B0A67B80036437B /* BHCameraTests */,
 				14B963D51B0A67B80036437B /* Products */,
 			);
@@ -83,8 +86,10 @@
 		14B963D61B0A67B80036437B /* BHCamera */ = {
 			isa = PBXGroup;
 			children = (
-				14B963D71B0A67B80036437B /* BHCamera.h */,
-				14B963D91B0A67B80036437B /* BHCamera.m */,
+				14B963F91B0A680C0036437B /* BHCameraManager.h */,
+				14B963FA1B0A680C0036437B /* BHCameraManager.m */,
+				14B963FD1B0A684C0036437B /* BHCamera.swift */,
+				1448D1C01B4C74260011926D /* BHCamera.podspec */,
 			);
 			path = BHCamera;
 			sourceTree = "<group>";
@@ -149,7 +154,8 @@
 		14B963CC1B0A67B80036437B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Bodhi5, Inc.";
 				TargetAttributes = {
 					14B963D31B0A67B80036437B = {
@@ -193,7 +199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B963DA1B0A67B80036437B /* BHCamera.m in Sources */,
+				14B963FE1B0A684C0036437B /* BHCamera.swift in Sources */,
+				14B963FB1B0A680C0036437B /* BHCameraManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +242,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -296,18 +304,39 @@
 		14B963E91B0A67B80036437B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/node_modules/react-native/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BHCamera/BHCamera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		14B963EA1B0A67B80036437B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/node_modules/react-native/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BHCamera/BHCamera-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -325,6 +354,7 @@
 				);
 				INFOPLIST_FILE = BHCameraTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bodhi5.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -339,6 +369,7 @@
 				);
 				INFOPLIST_FILE = BHCameraTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bodhi5.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -362,6 +393,7 @@
 				14B963EA1B0A67B80036437B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14B963EB1B0A67B80036437B /* Build configuration list for PBXNativeTarget "BHCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +402,7 @@
 				14B963ED1B0A67B80036437B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
